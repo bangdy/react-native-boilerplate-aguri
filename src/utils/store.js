@@ -1,10 +1,7 @@
-import {
-  configureStore,
-  combineReducers,
-  getDefaultMiddleware,
-} from '@reduxjs/toolkit'
-import logger from 'redux-logger'
+import { combineReducers, configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
+
 import appReducer from 'slices/app.slice'
+import logger from 'redux-logger'
 
 const rootReducer = combineReducers({
   app: appReducer,

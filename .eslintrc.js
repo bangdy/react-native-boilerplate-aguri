@@ -5,7 +5,13 @@ module.exports = {
     jest: true,
   },
   parser: 'babel-eslint',
-  extends: ['plugin:react/recommended', 'airbnb'],
+  extends: [
+    'plugin:react/recommended',
+    'airbnb',
+    '@nuxtjs/eslint-config-typescript',
+    'plugin:nuxt/recommended',
+    'prettier',
+  ],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',

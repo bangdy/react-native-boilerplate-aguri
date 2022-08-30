@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
-import { NavigationContainer } from '@react-navigation/native'
-import { Text } from 'react-native'
-import { useSelector, useDispatch } from 'react-redux'
-import { authenticate } from 'slices/app.slice'
+import { useDispatch, useSelector } from 'react-redux'
 
 import DrawerNavigator from './Drawer'
+import { NavigationContainer } from '@react-navigation/native'
+import { Text } from 'react-native'
+import { authenticate } from 'slices/app.slice'
 
 const Navigator = () => {
   const { checked, loggedIn } = useSelector((state) => state.app)

@@ -1,8 +1,4 @@
-import {
-  DrawerContentScrollView,
-  DrawerItemList,
-  createDrawerNavigator,
-} from '@react-navigation/drawer'
+import { DrawerContentScrollView, DrawerItemList, createDrawerNavigator } from '@react-navigation/drawer'
 
 import DrawerMenu from './DrawerMenu'
 import React from 'react'

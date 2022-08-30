@@ -1,9 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { View, SafeAreaView, Text } from 'react-native'
+import { SafeAreaView, Text, View } from 'react-native'
 
 import { DrawerActions } from '@react-navigation/native'
 import FontIcon from 'react-native-vector-icons/FontAwesome5'
+import PropTypes from 'prop-types'
+import React from 'react'
 import { colors } from 'theme'
 
 const styles = {

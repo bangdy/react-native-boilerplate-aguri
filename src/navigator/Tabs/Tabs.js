@@ -17,23 +17,9 @@ const TabNavigator = () => (
         tabBarIcon: ({ focused }) => {
           switch (route.name) {
             case 'HomeTab':
-              return (
-                <FontIcon
-                  name="HomeTab"
-                  color={focused ? colors.lightPurple : colors.gray}
-                  size={20}
-                  solid
-                />
-              )
+              return <FontIcon name="HomeTab" color={focused ? colors.lightPurple : colors.gray} size={20} solid />
             case 'ProfileTab':
-              return (
-                <FontIcon
-                  name="ProfileTab"
-                  color={focused ? colors.lightPurple : colors.gray}
-                  size={20}
-                  solid
-                />
-              )
+              return <FontIcon name="ProfileTab" color={focused ? colors.lightPurple : colors.gray} size={20} solid />
             default:
               return <View />
           }
