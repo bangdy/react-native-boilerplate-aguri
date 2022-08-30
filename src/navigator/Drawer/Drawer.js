@@ -1,28 +1,37 @@
-import React from 'react'
 import {
-  createDrawerNavigator,
   DrawerContentScrollView,
   DrawerItemList,
+  createDrawerNavigator,
 } from '@react-navigation/drawer'
+
 import DrawerMenu from './DrawerMenu'
+import React from 'react'
 import TabNavigator from '../Tabs'
 
 const Drawer = createDrawerNavigator()
 
 const DrawerMenuContainer = (props) => {
-  const { state, ...rest } = props
-  const newState = { ...state }
-  newState.routes = newState.routes.filter((item) => item.name !== 'Home')
+  const { routes, ...rest } = props
+  const newState = { ...routes }
+  // newState.routes = newState.filter((item) => item.name !== 'Home')
+
   return (
     <DrawerContentScrollView {...props}>
       <DrawerMenu {...props} />
-      <DrawerItemList state={newState} {...rest} />
+      <DrawerItemList {...rest} />
     </DrawerContentScrollView>
   )
 }
 
 export default () => (
-  <Drawer.Navigator initialRouteName="Home" drawerContent={DrawerMenuContainer}>
+  <Drawer.Navigator
+    initialRouteName="Home"
+    drawerContent={DrawerMenuContainer}
+    screenOptions={{
+      headerShown: false,
+      swipeEnabled: false,
+    }}
+  >
     <Drawer.Screen name="Home" component={TabNavigator} />
   </Drawer.Navigator>
 )

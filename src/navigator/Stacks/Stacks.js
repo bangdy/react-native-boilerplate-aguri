@@ -1,11 +1,11 @@
-import React from 'react'
-import { createStackNavigator } from '@react-navigation/stack'
-import { colors } from 'theme'
-import Home from 'pages/Home'
-import Profile from 'pages/Profile'
 import Details from 'pages/Details'
 import HeaderLeft from './HeaderLeft'
 import HeaderTitle from './HeaderTitle'
+import Home from 'pages/Home'
+import Profile from 'pages/Profile'
+import React from 'react'
+import { colors } from 'theme'
+import { createStackNavigator } from '@react-navigation/stack'
 
 // ------------------------------------
 // Constants
@@ -17,6 +17,7 @@ const navigationProps = {
   headerTintColor: 'white',
   headerStyle: { backgroundColor: colors.darkPurple },
   headerTitleStyle: { fontSize: 18 },
+  headerMode: 'screen',
 }
 
 // ------------------------------------
@@ -24,11 +25,7 @@ const navigationProps = {
 // ------------------------------------
 
 export const HomeNavigator = () => (
-  <Stack.Navigator
-    initialRouteName="Home"
-    headerMode="screen"
-    screenOptions={navigationProps}
-  >
+  <Stack.Navigator initialRouteName="Home" screenOptions={navigationProps}>
     <Stack.Screen
       name="Home"
       component={Home}
@@ -51,11 +48,7 @@ export const HomeNavigator = () => (
 )
 
 export const ProfileNavigator = () => (
-  <Stack.Navigator
-    initialRouteName="Profile"
-    headerMode="screen"
-    screenOptions={navigationProps}
-  >
+  <Stack.Navigator initialRouteName="Profile" screenOptions={navigationProps}>
     <Stack.Screen
       name="Profile"
       component={Profile}

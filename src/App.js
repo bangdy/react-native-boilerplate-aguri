@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react'
-import { View } from 'react-native'
-import { Provider } from 'react-redux'
-import store from 'utils/store'
 import 'utils/ignore'
 
+import React, { useEffect, useState } from 'react'
+
+import { NativeBaseProvider } from 'native-base'
+import Navigator from './navigator'
+import { Provider } from 'react-redux'
+import { View } from 'react-native'
+import { fontAssets } from 'theme/fonts'
 // assets
 import { imageAssets } from 'theme/images'
-import { fontAssets } from 'theme/fonts'
-import Navigator from './navigator'
+import store from 'utils/store'
 
 const App = () => {
   const [didLoad, setDidLoad] = useState(false)
@@ -23,9 +25,11 @@ const App = () => {
   }, [])
 
   return didLoad ? (
-    <Provider store={store}>
-      <Navigator />
-    </Provider>
+    <NativeBaseProvider>
+      <Provider store={store}>
+        <Navigator />
+      </Provider>
+    </NativeBaseProvider>
   ) : (
     <View />
   )
