@@ -1,9 +1,8 @@
 // stack navigators
 import { HomeNavigator, ProfileNavigator } from '../Stacks'
 
-import FontIcon from 'react-native-vector-icons/FontAwesome5'
+import { Ionicons } from '@expo/vector-icons'
 import React from 'react'
-import { View } from 'react-native'
 import { colors } from 'theme'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
@@ -15,13 +14,14 @@ const TabNavigator = () => (
       (({ route }) => ({
         // eslint-disable-next-line react/prop-types
         tabBarIcon: ({ focused }) => {
+          console.log(route.name)
           switch (route.name) {
             case 'HomeTab':
-              return <FontIcon name="HomeTab" color={focused ? colors.lightPurple : colors.gray} size={20} solid />
+              return <Ionicons name="md-checkmark-circle" size={32} color="green" />
             case 'ProfileTab':
-              return <FontIcon name="ProfileTab" color={focused ? colors.lightPurple : colors.gray} size={20} solid />
+              return <Ionicons name="home" color={focused ? colors.lightPurple : colors.gray} size={20} solid />
             default:
-              return <View />
+              return <Ionicons name="md-checkmark-circle" size={32} color="green" />
           }
         },
       }),
